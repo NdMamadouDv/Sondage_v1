@@ -3,8 +3,8 @@ import React from "react";
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-20">
-      <div className="navbar bg-base-100 shadow-md py-6">
+    <header className="sticky top-0 z-20 shadow-md">
+      <div className="navbar bg-base-100  py-6 layout">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
