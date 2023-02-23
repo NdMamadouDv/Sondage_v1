@@ -4,7 +4,7 @@ import React from "react";
 function Navbar() {
   return (
     <header className="sticky top-0 z-20">
-      <div className="navbar bg-base-100 ">
+      <div className="navbar bg-base-100 shadow-md py-6">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -57,7 +57,12 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Sondage.com</a>
+          <Link
+            className="btn btn-ghost normal-case text-xl text-primary"
+            href="/"
+          >
+            Sondage.com
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
