@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Source Sans Pro", system-ui, -apple-system, BlinkMacSystemFont,
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    color: "#0D0A1B";
+  }
+  .ProgressRoot {
+    position: relative;
+    overflow: hidden;
+    background: black;
+    border-radius: 99999px;
+    width: 300px;
+    height: 25px;
+    transform: translateZ(0);
+  }
+
+  .ProgressIndicator {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    transition: transform 660ms cubic-bezier(0.65, 0, 0.35, 1);
+  }
+}
+@layer components {
+  .h1 {
+    @apply text-2xl md:text-4xl uppercase tracking-[10px];
+  }
+
+  .h2 {
+    @apply text-xl font-bold md:text-3xl uppercase tracking-[10px];
+  }
+
+  .h3 {
+    @apply text-xl font-bold uppercase tracking-[10px];
+  }
+
+  .h4 {
+    @apply text-base font-bold md:text-lg;
+  }
+}
+.layout {
+  max-width: 1280px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}

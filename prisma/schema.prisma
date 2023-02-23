@@ -1,0 +1,118 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  surveys   Survey[]
+  Result    Result[]
+}
+
+model Survey {
+  id        Int        @id @default(autoincrement())
+  title     String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  questions Question[]
+  results   Result[]
+  owner     User       @relation(fields: [ownerId], references: [id])
+  ownerId   Int
+}
+
+model Question {
+  id        Int      @id @default(autoincrement())
+  text      String
+  type      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  survey    Survey   @relation(fields: [surveyId], references: [id])
+  surveyId  Int
+  options   Option[]
+}
+
+model Option {
+  id         Int      @id @default(autoincrement())
+  text       String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  question   Question @relation(fields: [questionId], references: [id])
+  questionId Int
+}
+
+model Result {
+  id        Int      @id @default(autoincrement())
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  survey    Survey   @relation(fields: [surveyId], references: [id])
+  surveyId  Int
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+}
+
+// Deuxième model
+// model User {
+//   id        Int      @id @default(autoincrement())
+//   email     String   @unique
+//   password  String
+//   name      String?
+//   surveys   Survey[]
+// }
+
+// model Survey {
+//   id            Int        @id @default(autoincrement())
+//   title         String
+//   description   String?
+//   user          User       @relation(fields: [userId], references: [id])
+//   userId        Int
+//   questions     Question[]
+//   votes         Vote[]
+// }
+
+// model Question {
+//   id            Int        @id @default(autoincrement())
+//   text          String
+//   type          String     // "multiple-choice", "single-choice", "open-text", etc.
+//   options       Option[]   @relation("QuestionOptions")
+//   survey        Survey     @relation(fields: [surveyId], references: [id])
+//   surveyId      Int
+// }
+
+// model Option {
+//   id            Int        @id @default(autoincrement())
+//   text          String
+//   question      Question   @relation("QuestionOptions", fields: [questionId], references: [id])
+//   questionId    Int
+// }
+
+// model Vote {
+//   id            Int        @id @default(autoincrement())
+//   user          User       @relation(fields: [userId], references: [id])
+//   userId        Int
+//   survey        Survey     @relation(fields: [surveyId], references: [id])
+//   surveyId      Int
+//   responses     Response[]
+// }
+
+// model Response {
+//   id            Int        @id @default(autoincrement())
+//   text          String?
+//   value         Int?
+//   question      Question   @relation(fields: [questionId], references: [id])
+//   questionId    Int
+//   vote          Vote       @relation(fields: [voteId], references: [id])
+//   voteId        Int
+// }
