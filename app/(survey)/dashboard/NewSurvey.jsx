@@ -24,7 +24,7 @@ function NewSurvey() {
               à partir de zéro.
             </Dialog.Description>
             <div
-              className="grid grid-cols-2 gap-6 bg-white items-center  "
+              className="grid grid-cols-2 gap-6 bg-white items-center justify-center "
               data-theme="garden"
             >
               <Dialog.Root>
@@ -68,7 +68,7 @@ function NewSurvey() {
                             type="submit"
                             initial={{ scale: 1 }}
                             whileHover={{ scale: 1.05 }}
-                            className="btn btn-outline "
+                            className="btn btn-outline  btn-sm "
                           >
                             Créer mon questionnaire
                           </motion.button>
@@ -81,7 +81,7 @@ function NewSurvey() {
                           initial={{ scale: 1 }}
                           whileHover={{ scale: 1.2 }}
                         >
-                          <IoCloseSharp className="h-auto w-8 text-accent" />
+                          <IoCloseSharp className="h-auto w-8 text-red-500" />
                         </motion.button>
                       </Dialog.Close>
                     </Dialog.Content>
@@ -126,7 +126,7 @@ function NewSurvey() {
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.2 }}
               >
-                <IoCloseSharp className="h-auto w-8 text-accent" />
+                <IoCloseSharp className="h-auto w-8 text-red-500" />
               </motion.button>
             </Dialog.Close>
           </Dialog.Content>
