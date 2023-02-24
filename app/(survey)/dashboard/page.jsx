@@ -9,11 +9,13 @@ import Sondages from "./Sondages";
 
 function page() {
   return (
-    <div className=" flex">
+    <div className=" flex flex-wrap">
       <Sidebar />
       <div className=" bg-noir flex flex-col basis-0 grow layout space-y-10 py-10  ">
         <div className="py-6 container space-y-6 lg:space-y-12  ">
-          <h1 className="h1 text-center md:text-left">Tableau de bord</h1>
+          <h1 className="h1 text-center md:text-left underline underline-offset-4">
+            Tableau de bord
+          </h1>
           <div className="grid lg:grid-cols-2 items-center justify-center space-y-4">
             <NewSurvey />
 

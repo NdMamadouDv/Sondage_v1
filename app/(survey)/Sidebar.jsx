@@ -12,10 +12,10 @@ function Sidebar() {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="p-6  sm:h-full sm:basis-80 sm:grow-0 flex flex-col border-r border-gray-400/30   w-full items-center justify-start bg-white md:min-h-screen md:mt-0 mt-6 md:sticky md:left-0 md:top-10">
+    <div className="p-6  sm:h-full sm:basis-80 sm:grow-0 flex flex-col border-r border-gray-400/30  w-full items-center justify-start bg-white sm:min-h-screen md:mt-0 mt-6  ">
       <div className="container bg-blanc flex flex-col justify-center items-center space-y-6">
         <div className="flex flex-col space-y-6 p-8 bg-[#FAF7F4] rounded-md">
-          <IoAddCircleSharp className="w-8 h-auto text-primary self-end hover:text-primary-focus cursor-pointer" />
+          {/* <IoAddCircleSharp className="w-8 h-auto text-primary self-end hover:text-primary-focus cursor-pointer" /> */}
           <h3 className="h3">Mes dossiers</h3>
           <button className="btn btn-secondary px-10 ">
             <span className="mr-6">
