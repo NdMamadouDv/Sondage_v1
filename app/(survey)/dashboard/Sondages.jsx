@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 
 function Sondages() {
   return (
-    <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8 items-center justify-center py-6">
-      <div className="flex items-start justify-evenly flex-col ">
+    <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-8 items-center justify-center py-6 ">
+      <div className="flex items-start justify-evenly flex-col space-y-6">
+        {/* Vue web */}
         <motion.div
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.05 }}
-          className="card card-compact w-64 bg-base-100 shadow-xl"
+          className="hidden md:card card-compact w-64 bg-base-100 shadow-xl"
         >
           <figure>
             <Image
@@ -35,6 +36,37 @@ function Sondages() {
             </div>
           </div>
         </motion.div>
+        {/* Vue mobile */}
+        <div className=" md:hidden card w-96 bg-base-200 text-neutral hover:bg-base-300">
+          <div className="card-body">
+            <h3 className="hs sm:text-lg">
+              Sondage concernant les habitudes de consommation de jeunes de
+              12-25ans
+            </h3>
+            <div className="flex items-center justify-between">
+              <p className="font-fjalla font-bold text-primary">
+                {" "}
+                15 réponse !
+              </p>
+              <TfiMoreAlt className="hover:text-primary cursor-pointer" />
+            </div>
+          </div>
+        </div>
+        <div className=" md:hidden card w-96 bg-base-200 text-neutral hover:bg-base-300">
+          <div className="card-body">
+            <h3 className="hs sm:text-lg">
+              Sondage concernant les habitudes de consommation de jeunes de
+              12-25ans
+            </h3>
+            <div className="flex items-center justify-between">
+              <p className="font-fjalla font-bold text-primary">
+                {" "}
+                15 réponse !
+              </p>
+              <TfiMoreAlt className="hover:text-primary cursor-pointer" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

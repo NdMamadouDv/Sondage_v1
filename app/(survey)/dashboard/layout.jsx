@@ -9,6 +9,7 @@ export default function RootLayout({ children }) {
       <head />
 
       <body className="">
+        {/* Mettre en place la recuperation du questionnaire présente dans la base de donnée */}
         <Navbar />
         <main className="h-full z-0">{children}</main>
         <Footer />

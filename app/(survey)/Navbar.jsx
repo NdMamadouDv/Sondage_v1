@@ -9,15 +9,26 @@ function Navbar() {
   return (
     <header className="sticky bg-base-100 top-0 z-20 shadow-md">
       <div className="navbar  layout">
-        <div className="flex-1">
-          <Link
-            className=" font-Fjalla normal-case text-3xl text-primary hover:text-primary-focus  "
+        <div className="navbar-start">
+          <p
+            className=" font-sans font-semibold text-2xl text-neutral hover:text-neutral-focus  "
             href="/"
           >
-            Sondage.com
-          </Link>
+            Mes sondages
+          </p>
         </div>
-        <div className="flex-none">
+        {/* <ul className="navbar-center menu menu-compact menu-horizontal bg-base-100 space-x-4 rounded-box">
+          <li>
+            <Link href="/">Questionnaire</Link>
+          </li>
+          <li>
+            <Link href="/">Resultats</Link>
+          </li>
+          <li>
+            <Link href="/">Collecte de réponses</Link>
+          </li>
+        </ul> */}
+        <div className="navbar-end">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
@@ -28,6 +39,11 @@ function Navbar() {
               tabIndex={0}
               className="menu  dropdown-content mt-3  shadow bg-base-300 rounded-box w-[300px] p-5 space-y-2"
             >
+              <li>
+                <Link href="/dashboard" className="hover:bg-base-100">
+                  Tableau de bord
+                </Link>
+              </li>
               <li>
                 <Link href="/dashboard/setting" className="hover:bg-base-100">
                   Paramètres
@@ -43,7 +59,8 @@ function Navbar() {
               <li>
                 <Link
                   href="/plan"
-                  className="font-light btn btn-accent  font-Fjalla uppercase tracking[5px]  text-white"
+                  className="font-light btn btn-accent font-Fjalla uppercase tracking[5px]  text-white"
+                  data-theme="mytheme"
                 >
                   Passer à l'étape supérieur
                 </Link>

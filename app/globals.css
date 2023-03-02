@@ -41,9 +41,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90vw;
-    max-width: 450px;
-    max-height: 85vh;
+    width: 80vw;
+    max-width: 500px;
+    max-height: 95vh;
     padding: 25px;
     animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -71,6 +71,11 @@
   }
 }
 @layer components {
+  p,
+  ul,
+  li {
+    @apply font-sans;
+  }
   .h1 {
     @apply font-Fjalla text-xl sm:text-2xl md:text-3xl uppercase tracking-[10px];
   }
@@ -90,11 +95,11 @@
     @apply font-Fjalla text-2xl tracking-[5px] btn btn-link text-secondary hover:text-primary-focus underline-offset-4 hover:decoration-primary;
   }
   .info-title {
-    @apply font-Fjalla  sm:text-lg font-bold uppercase tracking-[3px];
+    @apply font-Fjalla  sm:text-lg font-bold uppercase sm:tracking-[3px];
   }
 
   .info-text {
-    @apply text-gray-600/80 text-sm text-right;
+    @apply text-sm text-center font-sans;
   }
 }
 .layout {
