@@ -4,7 +4,7 @@ import { ImFacebook, ImTwitter, ImGithub, ImLinkedin } from "react-icons/im";
 function Footer() {
   return (
     <div className=" bg-black py-10 text-white">
-      <div className="grid grid-cols-2 layout place-content-between">
+      <div className="grid lg:grid-cols-2 layout items-center justify-center lg:place-content-between space-y-10">
         <div className="space-y-2">
           <Link
             className=" font-Fjalla normal-case text-3xl text-primary hover:text-primary-focus  "
