@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
 
       <body className="">
         <Navbar />
-        <main className="min-h-screen z-0">{children}</main>
+        <main className="min-h-screen z-0 bg-white">{children}</main>
         <Footer />
       </body>
     </html>

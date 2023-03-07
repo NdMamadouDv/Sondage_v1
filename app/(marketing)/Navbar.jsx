@@ -6,14 +6,14 @@ import { TfiMenu } from "react-icons/tfi";
 
 function Navbar() {
   return (
-    <header className="sticky bg-base-100 top-0 z-20 shadow-md">
+    <header className="sticky bg-base-100 top-0 z-20 shadow-md bg-[#F9FAFA]">
       <div className="navbar   py-6 layout ">
         <div className="sm:navbar-start ">
           <Link
             className=" font-Fjalla normal-case text-3xl text-primary hover:text-primary-focus  "
             href="/"
           >
-            Sondage.com
+            ISurvey.com
           </Link>
         </div>
 
