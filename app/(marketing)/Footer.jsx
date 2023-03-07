@@ -3,7 +3,7 @@ import React from "react";
 import { ImFacebook, ImTwitter, ImGithub, ImLinkedin } from "react-icons/im";
 function Footer() {
   return (
-    <div className=" bg-black py-10 text-white">
+    <div className=" bg-black mt-10 py-10 text-white">
       <div className="grid lg:grid-cols-2 layout items-center justify-center lg:place-content-between space-y-10">
         <div className="space-y-2">
           <Link
