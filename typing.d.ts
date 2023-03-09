@@ -13,23 +13,21 @@ interface Image {
         _type:"reference";
     }
 }
-export interface PageInfo extends SanityBody {
-    _type:"pageInfo";
-    name:string;
-    role:string;
-    heroImage:Image;
-    backgroundInformation:string;
-    profilePic:Image;
-    phoneNumber:string;
-    email:string;
-    address:string;
-    socials:Social[]
-}
-export interface Technology extends SanityBody {
-    _type:"skill";
-    title:string;
-    progress:number;
-    image:Image;
+
+export interface Faq extends SanityBody {
+    _type:"faq";
+    question1:string;
+    reponse1:String;
+    question2:string;
+    reponse2:String;
+    question3:string;
+    reponse3:String;
+    question4:string;
+    reponse4:String;
+    question5:string;
+    reponse5:String;
+    question6:string;
+    reponse6:String;
 }
 
 

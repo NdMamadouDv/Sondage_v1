@@ -4,7 +4,7 @@ import React from "react";
 
 function Feature2() {
   return (
-    <div className="flex flex-col items-center justify-evenly h-screen space-y-6">
+    <div className="text-neutral flex flex-col items-center justify-evenly h-screen space-y-6">
       <h3 className="h3 text-center">
         Créez totalement votre sondage ou partez d'un modèle !
       </h3>
@@ -23,7 +23,7 @@ function Feature2() {
             classement par ordre de préférence, tous les questionnaires sont
             entièrement personnalisables !
           </p>
-          <ul className="list-disc ">
+          <ul className="list-disc space-y-3">
             <li className="text-xl hover:underline">
               Augmentez le taux de conversion de votre site web.
             </li>
@@ -31,7 +31,7 @@ function Feature2() {
               Augmentez l'engagement de vos visiteurs.
             </li>
             <li className="text-xl hover:underline">
-              Prenez des écision à la lumière de ce que veulent vos clients.
+              Prenez des décisions à la lumière de ce que veulent vos clients.
             </li>
           </ul>
         </div>

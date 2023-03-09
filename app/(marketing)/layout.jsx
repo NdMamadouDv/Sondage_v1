@@ -8,8 +8,10 @@ export default function RootLayout({ children }) {
       <head />
 
       <body className="">
-        <Navbar />
-        <main className="min-h-screen z-0 bg-white">{children}</main>
+        <div className=" z-0 bg-white">
+          <Navbar />
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

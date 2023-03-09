@@ -4,7 +4,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="flex flex-col items-center justify-evenly h-screen">
+    <div className="flex flex-col items-center justify-evenly h-screen text-neutral">
       <div className=" grid lg:grid-cols-2 justify-items-center place-items-center w-full justify-center gap-6 space-y-10">
         <div className="space-y-10 text-center lg:text-left">
           <h1 className="h1 font-semibold">

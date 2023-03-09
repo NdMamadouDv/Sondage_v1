@@ -6,7 +6,7 @@ import { TfiMenu } from "react-icons/tfi";
 
 function Navbar() {
   return (
-    <header className="sticky bg-base-100 top-0 z-20 shadow-md bg-[#F9FAFA]">
+    <header className="sticky bg-base-100 top-0 z-20 shadow-md ">
       <div className="navbar   py-6 layout ">
         <div className="sm:navbar-start ">
           <Link
