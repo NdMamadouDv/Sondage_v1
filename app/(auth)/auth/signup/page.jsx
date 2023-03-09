@@ -28,7 +28,7 @@ function page() {
     }
   }
   return (
-    <div className=" bg-white">
+    <div className="min-h-screen bg-white">
       <section className="relative  overflow-hidden text-neutral layout">
         <Link
           className=" font-Fjalla normal-case text-3xl text-primary hover:text-primary-focus  absolute top-8 left-15 md:top-12"

@@ -104,6 +104,12 @@ function Navbar() {
               tabIndex={0}
               className="menu  dropdown-content mt-3  shadow bg-base-300 rounded-box w-[300px] p-5 space-y-2"
             >
+              {session ? (
+                <p className="text-center">{session.user.email}</p>
+              ) : (
+                "Non connecté"
+              )}
+
               <li>
                 <Link href="/" className="hover:bg-base-100">
                   Home

@@ -27,20 +27,8 @@ export default function Login() {
     if (error) {
       setErrorMsg(error.message);
     }
-    router.push("/dashboard");
-    console.log("auth page:", session);
+    router.push("/dashboard/newUser");
   }
-
-  const handleGitHubLogin = async () => {
-    className;
-    await supabase.auth.signInWithOAuth({
-      provider: "github",
-    });
-  };
-
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-  };
 
   return (
     <div className=" bg-white">

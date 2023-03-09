@@ -64,7 +64,7 @@ export default function SupabaseProvider({ children }) {
     if (error) {
       // gérer les erreurs de récupération de session ici
     }
-  }, []);
+  }, [supabase.auth]);
 
   useEffect(() => {
     const { data: listener } = supabase.auth.onAuthStateChange(
