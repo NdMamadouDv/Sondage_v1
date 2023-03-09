@@ -5,8 +5,7 @@ import Blog from "./Blog";
 import ControlBar from "./ControlBar";
 // import Select from "./Select";
 import Sondages from "./Sondages";
-import { useAuth, VIEWS } from "@/lib/auth";
-import Auth from "@/lib/auth";
+
 function page() {
   // useEffect(() => {
   //   async function getData() {
