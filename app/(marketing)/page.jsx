@@ -1,17 +1,20 @@
-"use client";
-import { createClient } from "@/utils/supabase-browser";
 import FAQ from "./FAQ";
 import Feature from "./Feature";
 import Feature2 from "./Feature2";
 import Hero from "./Hero";
+import { createClient } from "@/utils/supabase-server";
+import "server-only";
 
-export default function Home() {
+export default async function Home() {
   const supabase = createClient();
-  // const { data } = await supabase.from("User").select("*");
-  // console.log({ data });
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  console.log("marketing page:", session);
 
   return (
-    <main className=" flex flex-col space-y-6 layout">
+    <div className=" flex flex-col space-y-6 layout">
       <Hero />
 
       {/* <Teams /> */}
@@ -19,6 +22,6 @@ export default function Home() {
       <Feature />
       <Feature2 />
       <FAQ />
-    </main>
+    </div>
   );
 }

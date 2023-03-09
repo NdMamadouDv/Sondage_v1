@@ -10,15 +10,15 @@ export default async function RootLayout({ children }) {
   const {
     data: { session },
   } = await supabase.auth.getSession();
-  // console.log("layout", session);
+  // console.log("layout de base", session);
+  const accessToken = session?.access_token;
   return (
     <html lang="fr" data-theme="mytheme">
       <head />
 
       <body className="">
-        {/* Mettre en place la recuperation du questionnaire présente dans la base de donnée */}
         <SupabaseProvider>
-          <SupabaseListener serverAccessToken={session?.access_token} />
+          <SupabaseListener serverAccessToken={accessToken} />
 
           <main className="h-full z-0">{children}</main>
         </SupabaseProvider>

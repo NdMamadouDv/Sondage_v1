@@ -2,18 +2,14 @@ import Footer from "./Footer";
 import "../globals.css";
 import Navbar from "./Navbar";
 
-export default function RootLayout({ children }) {
+export default function MarketingLayout({ children }) {
   return (
-    <html lang="fr" data-theme="mytheme">
-      <head />
-
-      <body className="">
-        <div className=" z-0 bg-white">
-          <Navbar />
-          {children}
-        </div>
+    <>
+      <Navbar />
+      <section className="z-0 bg-white" data-theme="mytheme">
+        <div className=" ">{children}</div>
         <Footer />
-      </body>
-    </html>
+      </section>
+    </>
   );
 }

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { GoRocket } from "react-icons/go";
+import { useRouter } from "next/navigation";
 const SignInSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email requis"),
   password: Yup.string().required("mot de passe requis"),
@@ -16,7 +17,7 @@ const SignInSchema = Yup.object().shape({
 export default function Login() {
   const { supabase, session } = useSupabase();
   const [errorMsg, setErrorMsg] = useState(null);
-
+  const router = useRouter();
   async function signIn(formData) {
     const { error } = await supabase.auth.signInWithPassword({
       email: formData.email,
@@ -26,7 +27,10 @@ export default function Login() {
     if (error) {
       setErrorMsg(error.message);
     }
+    router.push("/dashboard");
+    console.log("auth page:", session);
   }
+
   const handleGitHubLogin = async () => {
     className;
     await supabase.auth.signInWithOAuth({
@@ -37,7 +41,7 @@ export default function Login() {
   const handleLogout = async () => {
     await supabase.auth.signOut();
   };
-  console.log("auth page:", session);
+
   return (
     <div className=" bg-white">
       <section className="relative  overflow-hidden text-neutral layout">

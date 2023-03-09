@@ -1,31 +1,23 @@
 import Footer from "../Footer";
 import "../../globals.css";
 import Navbar from "../Navbar";
-import SupabaseProvider from "@/components/supabase-provider";
-import SupabaseListener from "@/components/supabase-listener";
 import { createClient } from "@/utils/supabase-server";
 import "server-only";
 
-export default async function RootLayout({ children }) {
+export default async function DashboardLayout({ children }) {
   const supabase = createClient();
 
   const {
     data: { session },
   } = await supabase.auth.getSession();
-
+  console.log(session);
   return (
-    <html lang="fr" data-theme="garden">
-      <head />
+    <section className="" data-theme="garden">
+      {/* Mettre en place la recuperation du questionnaire présente dans la base de donnée */}
 
-      <body className="">
-        {/* Mettre en place la recuperation du questionnaire présente dans la base de donnée */}
-        <SupabaseProvider>
-          <SupabaseListener serverAccessToken={session?.access_token} />
-          <Navbar />
-          <main className="h-full z-0">{children}</main>
-          <Footer />
-        </SupabaseProvider>
-      </body>
-    </html>
+      <Navbar />
+      <div className="h-full z-0">{children}</div>
+      <Footer />
+    </section>
   );
 }

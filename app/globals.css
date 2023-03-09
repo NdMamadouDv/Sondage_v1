@@ -190,7 +190,10 @@
     @apply font-Fjalla  sm:text-base  md:text-lg;
   }
   .link-navbar {
-    @apply font-Fjalla text-lg tracking-[2px];
+    @apply font-Source text-lg tracking-[2px];
+  }
+  .link-navbar-middle {
+    @apply font-Source text-base font-semibold tracking-[2px];
   }
   .info-title {
     @apply font-Fjalla  sm:text-lg font-bold uppercase sm:tracking-[3px];
