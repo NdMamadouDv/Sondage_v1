@@ -74,7 +74,7 @@ export default function Login() {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2 p-8 mt-8 md:mt-0 md:order-last order-1  ">
+          <div className="w-full md:w-1/2  mt-8 md:mt-0 md:order-last order-1  ">
             <div className="p-4 py-16 flex flex-col justify-center bg-blueGray-100 h-full">
               <Formik
                 initialValues={{
@@ -136,9 +136,9 @@ export default function Login() {
                       Se connecter
                     </button>
 
-                    <div className="flex flex-wrap justify-center -m-2">
+                    <div className="flex flex-wrap justify-center items-center">
                       <div className="w-auto p-2">
-                        <button className="flex items-center p-4 space-x-2 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200">
+                        <button className="flex items-center p-2 md:p-4 space-x-2 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200 text-sm md:text-base">
                           <FcGoogle />
                           <span className="font-semibold leading-normal">
                             Se connecter avec Google
@@ -146,7 +146,7 @@ export default function Login() {
                         </button>
                       </div>
                       <div className="w-auto p-2">
-                        <button className="flex items-center p-4 space-x-2 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200">
+                        <button className="flex items-center p-2 md:p-4 space-x-2 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200 text-sm md:text-base">
                           <BsFacebook className="text-[#4267B2]" />
                           <span className="font-semibold leading-normal">
                             Se connecter avec Facebook

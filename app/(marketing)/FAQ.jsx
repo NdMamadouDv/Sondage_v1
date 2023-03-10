@@ -17,11 +17,11 @@ function FAQ() {
           value="item-1"
         >
           <AccordionTrigger>
-            Est-ce que ce servce payant ? Cela va t'il le rester ?
+            Est-ce que ce serivce est gratuit ? Cela va t'il le rester ?
           </AccordionTrigger>
           <AccordionContent>
-            Non ! Notre service est completement gratuit, et accessible pour
-            tous le monde. Nous voulons permettre à un maximum d'accéder à cet
+            Notre service est completement gratuit, et accessible pour tous le
+            monde. Nous voulons permettre à un maximum d'accéder à cet
             outil.Cependant, nous travaillons sur l'éventuelle mise en place
             d'un système payant au niveau des partages.
           </AccordionContent>
