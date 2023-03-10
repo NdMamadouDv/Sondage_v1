@@ -4,7 +4,7 @@ import * as Accordion from "@radix-ui/react-accordion";
 import { BsChevronDown } from "react-icons/bs";
 function FAQ() {
   return (
-    <div className="flex flex-col space-y-24 items-center justify-evenly py-24 layout">
+    <div className="flex flex-col space-y-24 items-center justify-evenly py-24 ">
       <h2 className="h2 text-primary mb-8">Foire aux Questions</h2>
       <Accordion.Root
         className="AccordionRoot border"
@@ -16,7 +16,9 @@ function FAQ() {
           className="AccordionItem text-xs sm:text-base lg:text-lg"
           value="item-1"
         >
-          <AccordionTrigger>Est-ce que c'est payant ?</AccordionTrigger>
+          <AccordionTrigger>
+            Est-ce que ce servce payant ? Cela va t'il le rester ?
+          </AccordionTrigger>
           <AccordionContent>
             Non ! Notre service est completement gratuit, et accessible pour
             tous le monde. Nous voulons permettre à un maximum d'accéder à cet

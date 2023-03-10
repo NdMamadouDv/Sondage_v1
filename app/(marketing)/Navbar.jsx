@@ -31,10 +31,10 @@ function Navbar() {
           </Link>
         </div>
         <div className="hidden sm:flex navbar-center">
-          <ul className="menu menu-horizontal px-1 flex items-center justify-between space-x-6">
-            <li>
+          <ul className="menu menu-horizontal  flex items-center justify-between space-x-2">
+            <li className="rounded-sm">
               <Link href="/" className="link-navbar-middle ">
-                Home
+                Accueil
               </Link>
             </li>
 
@@ -107,7 +107,7 @@ function Navbar() {
               {session ? (
                 <p className="text-center">{session.user.email}</p>
               ) : (
-                "Non connecté"
+                ""
               )}
 
               <li>
@@ -121,12 +121,21 @@ function Navbar() {
 
               <div className="divider my-8" />
               <li className="place-self-center ">
-                <button
-                  className="btn bg-red-700 text-white border-none hover:bg-red-400 max-w-[8rem] h-auto"
-                  onClick={handleLogout}
-                >
-                  Me déconnecter
-                </button>
+                {session ? (
+                  <button
+                    className="btn bg-red-700 text-white border-none hover:bg-red-400 max-w-[8rem] h-auto"
+                    onClick={handleLogout}
+                  >
+                    Me déconnecter
+                  </button>
+                ) : (
+                  <Link
+                    className="btn btn-primary text-white  max-w-[8rem] h-auto"
+                    href="/auth"
+                  >
+                    Me connecter
+                  </Link>
+                )}
               </li>
               {/* <li className="self-stretch	">
                 <Link

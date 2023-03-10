@@ -8,23 +8,23 @@ import { SlMagicWand } from "react-icons/sl";
 function ControlBar() {
   return (
     <div className="grid lg:grid-cols-2 items-center justify-center lg:items-end space-y-4">
-      <div className="flex w-full justify-between items-center">
+      <div className="flex w-full justify-between items-center space-x-6 md:space-x-2">
         <button data-theme="mytheme">
           <Link
             href="/dashboard/create"
             className="btn btn-primary text-black  hover:text-white text-xs lg:tracking-[1px]"
           >
-            <BsPlusCircleFill className="h-auto w-4 md:w-5 mr-5" />
+            <BsPlusCircleFill className="h-auto w-4 md:w-5 mr-5 hidden sm:block" />
             Créer mon propre questionnaire
           </Link>
         </button>
         <button data-theme="mytheme">
           <Link
             href="/dashboard/generator"
-            className="btn btn-secondary  text-black  hover:text-white text-xs lg:tracking-[1px]"
+            className="btn btn-secondary  text-black  hover:text-white text-xs lg:tracking-[1px] "
           >
-            <SlMagicWand className="h-auto w-4 md:w-5 mr-5" />A partir d'un
-            modèle
+            <SlMagicWand className="h-auto w-4 md:w-5 mr-5 hidden sm:block" />A
+            partir d'un modèle
           </Link>
         </button>
       </div>

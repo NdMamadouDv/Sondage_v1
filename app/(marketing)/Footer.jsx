@@ -7,7 +7,7 @@ function Footer() {
       <div className="grid lg:grid-cols-2 layout items-center justify-center lg:place-content-between space-y-10">
         <div className="space-y-2 ">
           <Link
-            className=" font-Fjalla normal-case text-3xl text-primary hover:text-primary-focus  "
+            className=" font-Fjalla normal-case text-3xl text-primary hover:text-primary-focus "
             href="/"
           >
             ISurvey.com

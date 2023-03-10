@@ -1,23 +1,32 @@
+"use client";
 import Footer from "../Footer";
 import "../../globals.css";
 import Navbar from "../Navbar";
-import { createClient } from "@/utils/supabase-server";
-import "server-only";
+import { useRouter } from "next/navigation";
+import { useSupabase } from "@/components/supabase-provider";
 
-export default async function DashboardLayout({ children }) {
-  const supabase = createClient();
+export default function DashboardLayout({ children }) {
+  const { supabase, session } = useSupabase();
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-  console.log(session);
+  const router = useRouter();
+  const goToLoginPage = function () {
+    router.push("/auth");
+  };
+
+  console.log("dashboard", session);
   return (
-    <section className="" data-theme="garden">
-      {/* Mettre en place la recuperation du questionnaire présente dans la base de donnée */}
+    <div className="bg-white">
+      {session ? (
+        <section className="" data-theme="garden">
+          {/* Mettre en place la recuperation du questionnaire présente dans la base de donnée */}
 
-      <Navbar />
-      <div className="h-full z-0">{children}</div>
-      <Footer />
-    </section>
+          <Navbar />
+          <div className="h-full z-0">{children}</div>
+          <Footer />
+        </section>
+      ) : (
+        goToLoginPage()
+      )}
+    </div>
   );
 }

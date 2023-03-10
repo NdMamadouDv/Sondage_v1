@@ -27,7 +27,9 @@ export default function Login() {
     if (error) {
       setErrorMsg(error.message);
     }
-    router.push("/dashboard/newUser");
+    if (session) {
+      router.push("/dashboard");
+    }
   }
 
   return (

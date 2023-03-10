@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import Sidebar from "../Sidebar";
 import Blog from "./Blog";
 import ControlBar from "./ControlBar";
-// import Select from "./Select";
+
 import Sondages from "./Sondages";
 
 function page() {
@@ -18,8 +18,6 @@ function page() {
           </h1>
           <div className="">
             <ControlBar />
-
-            {/* <Select /> */}
           </div>
           <h2 className="h2 text-center md:text-left">Mes sondages</h2>
 
