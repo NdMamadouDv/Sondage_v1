@@ -11,7 +11,7 @@ export default async function Home() {
   const {
     data: { session },
   } = await supabase.auth.getSession();
-  console.log("marketing page:", session);
+  // console.log("marketing page:", session);
 
   return (
     <div className=" flex flex-col space-y-6 layout">

@@ -10,7 +10,7 @@ export default async function RootLayout({ children }) {
   const {
     data: { session },
   } = await supabase.auth.getSession();
-  // console.log("layout de base", session);
+  console.log("layout de base - session en cours : ", session);
   const accessToken = session?.access_token;
   return (
     <html lang="fr" data-theme="mytheme">

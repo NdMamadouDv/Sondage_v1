@@ -7,16 +7,16 @@ import { useRouter } from "next/navigation";
 
 function Navbar() {
   const { supabase, session } = useSupabase();
-  console.log("nav marketing:", session);
-  const [currentSession, setCurrentSession] = useState(session);
-
-  useEffect(() => {
-    setCurrentSession(session);
-  }, [session]);
-  console.log("current session", currentSession);
+  // const [currentSession, setCurrentSession] = useState(session);
+  const router = useRouter();
+  // useEffect(() => {
+  //   setCurrentSession(session);
+  // }, [session]);
+  // // console.log("current session", currentSession);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
+    router.push("/");
   };
 
   return (
