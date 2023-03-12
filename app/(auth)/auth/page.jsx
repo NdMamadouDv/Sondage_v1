@@ -9,15 +9,21 @@ import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { GoRocket } from "react-icons/go";
 import { useRouter } from "next/navigation";
+
 const SignInSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email requis"),
   password: Yup.string().required("mot de passe requis"),
 });
-// Supabase auth needs to be triggered client-side
+
 export default function Login() {
   const { supabase, session } = useSupabase();
   const [errorMsg, setErrorMsg] = useState(null);
   const router = useRouter();
+  async function useFacebook() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "facebook",
+    });
+  }
   async function signIn(formData) {
     const { error } = await supabase.auth.signInWithPassword({
       email: formData.email,
@@ -33,7 +39,7 @@ export default function Login() {
   }
 
   return (
-    <div className=" bg-white">
+    <div className=" bg-white min-h-screen">
       <section className="relative  overflow-hidden text-neutral layout">
         <Link
           className=" font-Fjalla normal-case text-3xl text-primary hover:text-primary-focus  absolute top-8 left-15 md:top-12"
@@ -65,7 +71,7 @@ export default function Login() {
                       <li className="mb-5 flex flex-wrap">
                         <span className="flex-1 font-medium leading-relaxed">
                           24/7 Support venant d'un équipe dédié à votre
-                          satisfaction
+                          satisfaction.
                         </span>
                       </li>
                     </ul>
@@ -120,49 +126,50 @@ export default function Login() {
                     <div className="flex flex-wrap justify-end -m-2 mb-4">
                       <div className="w-auto p-2">
                         <Link
-                          className="text-sm text-primary font-medium"
-                          href="/auth/forgotPassword"
+                          className="text-sm text-primary font-medium hover:underline"
+                          href=""
                         >
                           Mot de passe oublié
                         </Link>
                       </div>
                     </div>
                     {errorMsg && <div className="text-red-600">{errorMsg}</div>}
-
-                    <button
-                      className="mb-9 py-4 px-9 w-full text-white font-semibold btn btn-primary"
-                      type="submit"
-                    >
-                      Se connecter
-                    </button>
-
-                    <div className="flex flex-wrap justify-center items-center">
-                      <div className="w-auto p-2">
-                        <button className="flex items-center p-2 md:p-4 space-x-2 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200 text-sm md:text-base">
-                          <FcGoogle />
-                          <span className="font-semibold leading-normal">
-                            Se connecter avec Google
-                          </span>
-                        </button>
-                      </div>
-                      <div className="w-auto p-2">
-                        <button className="flex items-center p-2 md:p-4 space-x-2 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200 text-sm md:text-base">
-                          <BsFacebook className="text-[#4267B2]" />
-                          <span className="font-semibold leading-normal">
-                            Se connecter avec Facebook
-                          </span>
-                        </button>
-                      </div>
-                      <p className="my-5 text-sm text-gray-600  text-center w-full">
-                        Ou bien
-                      </p>
-                      <button className="btn btn-secondary w-full text-white flex justify-between items-center">
-                        <GoRocket className="text-white" />
-                        <Link href="auth/signup" className="flex-1">
-                          <span className="">Créer mon compte</span>
-                        </Link>
+                    <div className="space-y-4">
+                      <button
+                        className="mb-9 py-4 px-9 w-full text-white font-semibold btn btn-primary"
+                        type="submit"
+                      >
+                        Se connecter
+                      </button>
+                      <Link
+                        href="https://ubjoszfoggmhdexjqllr.supabase.co/auth/v1/authorize?provider=google"
+                        className="flex items-center p-2 md:p-4 space-x-2 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200 text-sm md:text-base w-full justify-center"
+                      >
+                        <FcGoogle />
+                        <span className="font-semibold leading-normal flex-1">
+                          Se connecter avec Google
+                        </span>
+                      </Link>
+                      <button
+                        className="flex items-center p-2 md:p-4 space-x-2 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200 text-sm md:text-base"
+                        onClick={useFacebook}
+                      >
+                        <BsFacebook className="text-[#4267B2]" />
+                        <span className="font-semibold leading-normal">
+                          Se connecter avec Facebook
+                        </span>
                       </button>
                     </div>
+
+                    <p className="my-5 text-sm text-gray-600  text-center w-full">
+                      Ou bien
+                    </p>
+                    <button className="btn btn-secondary w-full text-white flex justify-between items-center">
+                      <GoRocket className="text-white" />
+                      <Link href="auth/signup" className="flex-1">
+                        <span className="">Créer mon compte</span>
+                      </Link>
+                    </button>
                   </Form>
                 )}
               </Formik>
