@@ -1,28 +1,19 @@
+"use client";
 import { FormContext } from "@/app/(auth)/auth/signup/page";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, usePathname } from "next/navigation";
 import React, { useContext } from "react";
-
 import * as Yup from "yup";
-import { useSupabase } from "../supabase-provider";
+import { useRouter } from "next/navigation";
 
-const SignUpSchema = Yup.object().shape({
+// Recuperer l'email
+const EmailSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email requis"),
 });
 function BasicSignup() {
   const { activeStepIndex, setActiveStepIndex, formData, setFormData } =
     useContext(FormContext);
-  const { supabase, session } = useSupabase();
 
-  async function signUp(formData) {
-    const { error } = await supabase.auth.signUp({
-      email: formData.email,
-    });
-
-    if (error) {
-      console.log(error);
-    }
-  }
   const renderError = (message) => (
     <p className="italic text-red-600">{message}</p>
   );
@@ -30,39 +21,48 @@ function BasicSignup() {
   // Recuperer l'email dans les params
   const searchParams = useSearchParams();
   const email = searchParams.get("email");
-  console.log(email);
+  console.log(searchParams.get("email"));
+  const router = useRouter();
+
   return (
-    <div className="">
+    <div className="w-2/3">
       <Formik
         initialValues={{
           email: email,
-          password: "",
-          passwordConfirmation: "",
         }}
-        validationSchema={SignUpSchema}
+        validationSchema={EmailSchema}
         onSubmit={(values) => {
           const data = { ...formData, ...values };
           setFormData(data);
-          signUp(data);
           setActiveStepIndex(activeStepIndex + 1);
         }}
       >
         <Form className="flex flex-col justify-center items-center">
           <div className="flex flex-col items-start mb-2">
-            <label className="font-medium text-gray-900">Email</label>
+            <label className="font-medium text-gray-900">Votre email</label>
             <Field
               name="email"
-              className="input input-bordered input-primary focus:bg-white "
-              value={email}
+              className="input input-bordered input-primary disabled:bg-gray-300 "
+              disabled
             />
           </div>
           <ErrorMessage name="email" render={renderError} />
 
-          <button className="sinscrire mt-2" type="submit">
+          <button
+            className="sinscrire mt-6 hover:bg-primary
+          
+          "
+            type="submit"
+          >
             Continuer
           </button>
         </Form>
-      </Formik>{" "}
+      </Formik>
+      <div className="flex flex-col items-center justify-center mt-24 w-full">
+        <h1 className=" h2 lg:text-5xl font-heading leading-tight text-center">
+          Vous n'êtes qu'à deux pas du sondage parfait !
+        </h1>
+      </div>
     </div>
   );
 }

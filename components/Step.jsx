@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { FormContext } from "@/app/(auth)/auth/signup/page";
 import BasicSignup from "./Forms/BasicSignup";
-import BasicSignUpStep2 from "./Forms/BasicSignUpStep2";
+import BasicSignUpStep2 from "./Forms/BasicSignUp2";
+import BasicSignUpStep3 from "./Forms/BasicSignUp3";
 import Success from "./Forms/Success";
 
 function Step() {
@@ -15,6 +16,9 @@ function Step() {
       stepContent = <BasicSignUpStep2 />;
       break;
     case 2:
+      stepContent = <BasicSignUpStep3 />;
+      break;
+    case 3:
       stepContent = <Success />;
       break;
     default:

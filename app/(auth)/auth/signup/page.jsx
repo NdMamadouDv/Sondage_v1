@@ -47,8 +47,6 @@ function page() {
   function handlesubmit(email) {
     const params = new URLSearchParams(searchParams);
     params.set("email", email.email);
-    // Verifier que l'email n'est pas déja présent dans la db
-
     console.log(params.get("email"));
     if (params.get("email") !== "undefined") {
       router.push(`/auth/signup/email?email=${params.get("email")}`);
@@ -57,9 +55,9 @@ function page() {
   // console.log(formData);
   return (
     <div className="min-h-screen bg-white">
-      <div className="  overflow-hidden text-neutral layout">
-        <div className="relative z-10 flex flex-wrap mt-8">
-          <div className="w-full md:w-1/2 mt-20 md:mt-0  order-first">
+      <div className="  text-neutral layout">
+        <div className="relative z-10  flex flex-wrap md:grid grid-cols-2 w-full">
+          <div className="w-full  order-first mt-8 md:mt-0 text-center md:text-left">
             <div className="container px-4 mx-auto">
               <div className="flex flex-wrap">
                 <div className="w-full">
@@ -73,7 +71,7 @@ function page() {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2 p-8 mt-3 md:mt-0 order-last   align-self-start">
+          <div className="w-full  p-8 md:mt-0 order-last   align-self-start">
             <div className=" py-12  flex flex-col items-center justify-start space-y-6  max-w-sm mx-auto">
               <Link
                 href="https://ubjoszfoggmhdexjqllr.supabase.co/auth/v1/authorize?provider=google"
@@ -104,9 +102,7 @@ function page() {
             <p className="my-2 text-sm text-gray-600 font-medium text-center">
               Ou bien
             </p>
-            <p className="text-xl font-light  text-center my-2">
-              Inscription par mail
-            </p>
+
             <div className="flex items-center justify-center flex-col w-full py-6">
               {/* Créer un input qui enverra l'email vers /auth/email */}
               <Formik

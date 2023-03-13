@@ -54,7 +54,7 @@ export default function Login() {
               <div className="flex flex-wrap">
                 <div className="w-full">
                   <div className="md:max-w-lg mx-auto pt-16 md:pb-32 space-y-10">
-                    <h2 className=" md:mt-12 h2 lg:text-5xl font-heading tracking-px-n leading-tight ">
+                    <h2 className=" md:mt-12 h2 lg:text-5xl font-heading  leading-tight ">
                       Connectez-vous et commencez à créer vos propres
                       questionnaire.
                     </h2>

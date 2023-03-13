@@ -4,6 +4,7 @@ import React, { useContext, useEffect } from "react";
 import * as Yup from "yup";
 import { supabaseClient } from "@/lib/supabase";
 
+// Valider le mot de passe
 const ValidationSchema = Yup.object().shape({
   name: Yup.string().required("Veuillez entrer votre nom de famille"),
   firstName: Yup.string().required("Veuillez entrer votre prénom"),
@@ -13,7 +14,7 @@ const ValidationSchema = Yup.object().shape({
   postCode: Yup.number(),
 });
 
-function BasicSignUpStep2() {
+function BasicSignUpStep3() {
   const { activeStepIndex, setActiveStepIndex, formData, setFormData } =
     useContext(FormContext);
 
@@ -112,15 +113,24 @@ function BasicSignUpStep2() {
             placeholder="https://my-workspace.com"
           />
         </div>
+        <button className="sinscrire" type="submit">
+          Continue
+        </button>
         <button
-          className="rounded-md bg-indigo-500 font-medium text-white my-2 p-2 col-span-2"
-          type="submit"
+          className="sinscrire"
+          onClick={setActiveStepIndex(activeStepIndex - 1)}
         >
           Continue
         </button>
       </Form>
+      <div className="flex flex-col items-center justify-center mt-24 w-full">
+        ggggg
+        <h1 className=" h2 lg:text-5xl font-heading leading-tight">
+          Vous allez recevoir après cette étape un email dans votre boîte !
+        </h1>
+      </div>
     </Formik>
   );
 }
 
-export default BasicSignUpStep2;
+export default BasicSignUpStep3;
