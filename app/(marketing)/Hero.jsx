@@ -17,9 +17,10 @@ function Hero() {
           </h2>
           <Link
             href="dashboard"
-            className="btn btn-primary text-white btn-lg max-w-lg"
+            className="btn btn-primary text-white btn-lg max-w-lg normal-case text-lg space-x-2"
           >
-            Créer mon sondage
+            Essayer -{" "}
+            <span className="text-sm ml-1 lowercase"> c'est gratuit ! </span>
           </Link>
         </div>
 

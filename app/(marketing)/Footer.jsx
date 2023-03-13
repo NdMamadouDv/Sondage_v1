@@ -22,11 +22,6 @@ function Footer() {
           <h3 className="h3 ">Navigation</h3>
           <ul className="">
             <li className="text-white">
-              <Link href="/" className="hover:underline  ">
-                Se connecter
-              </Link>
-            </li>
-            <li className="text-white">
               <Link href="/" className="hover:underline ">
                 Créer mon questionnaire
               </Link>
@@ -43,10 +38,10 @@ function Footer() {
 
       <div className="grid grid-cols-2 layout place-content-between w-full ">
         <div className="flex items-center justify-start space-x-4">
-          <ImFacebook />
-          <ImTwitter />
-          <ImGithub />
-          <ImLinkedin />
+          <ImFacebook className="hover:cursor-pointer" />
+          <ImTwitter className="hover:cursor-pointer" />
+          <ImGithub className="hover:cursor-pointer" />
+          <ImLinkedin className="hover:cursor-pointer" />
         </div>
         <div className="">
           <p className="text-right text-white">

@@ -15,6 +15,7 @@ module.exports = {
       fontFamily: {
         Source: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
         Fjalla: ["Fjalla One", ...defaultTheme.fontFamily.sans],
+        Mitr: ["Mitr", ...defaultTheme.fontFamily.sans],
       },
     },
   },

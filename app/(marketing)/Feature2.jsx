@@ -37,10 +37,10 @@ function Feature2() {
         </div>
       </div>
       <Link
-        href="dashboard"
-        className="btn btn-primary text-white btn-lg max-w-lg place-self-end mt-8"
+        href="/auth"
+        className="btn btn-neutral-focus text-white btn-lg max-w-lg place-self-end mt-8"
       >
-        Essayer maintenant
+        S'inscrire gratuitement
       </Link>
     </div>
   );

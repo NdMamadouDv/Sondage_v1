@@ -205,6 +205,9 @@
   .input:focus {
     outline-offset: 0px;
   }
+  .sinscrire {
+    @apply normal-case  bg-neutral py-1 px-2 rounded-md border-none text-white font-normal text-base font-sans hover:bg-neutral-focus;
+  }
 }
 .layout {
   max-width: 1280px;

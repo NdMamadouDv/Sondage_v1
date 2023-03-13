@@ -24,6 +24,7 @@ export default function Login() {
       provider: "facebook",
     });
   }
+
   async function signIn(formData) {
     const { error } = await supabase.auth.signInWithPassword({
       email: formData.email,

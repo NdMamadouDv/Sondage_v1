@@ -21,7 +21,7 @@ export default function Head() {
       />
       <link
         precedence="default"
-        href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Source+Sans+Pro&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Mitr&family=Source+Sans+Pro&display=swap"
         rel="stylesheet"
       />
       {/* <Script strategy="">

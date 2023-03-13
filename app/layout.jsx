@@ -13,7 +13,7 @@ export default async function RootLayout({ children }) {
   console.log("layout de base - session en cours : ", session);
   const accessToken = session?.access_token;
   return (
-    <html lang="fr" data-theme="mytheme">
+    <html lang="fr" data-theme="mytheme" className="scroll-smooth">
       <head />
 
       <body className="">
