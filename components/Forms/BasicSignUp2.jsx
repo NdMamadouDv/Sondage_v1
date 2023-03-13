@@ -127,7 +127,7 @@ function BasicSignUp2() {
       </Formik>
       <div className="flex flex-col items-center justify-center mt-24 w-full">
         <h1 className=" h2 lg:text-5xl font-heading leading-tight text-center">
-          Plus qu'un pas à faire après celui-là, c'est promis !
+          Plus qu&apos;un pas à faire après celui-là, c&apos;est promis !
         </h1>
       </div>
     </div>

@@ -60,7 +60,7 @@ function BasicSignup() {
       </Formik>
       <div className="flex flex-col items-center justify-center mt-24 w-full">
         <h1 className=" h2 lg:text-5xl font-heading leading-tight text-center">
-          Vous n'êtes qu'à deux pas du sondage parfait !
+          Vous n&apos;êtes qu&apos;à deux pas du sondage parfait !
         </h1>
       </div>
     </div>
