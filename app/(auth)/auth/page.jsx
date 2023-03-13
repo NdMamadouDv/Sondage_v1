@@ -42,12 +42,6 @@ export default function Login() {
   return (
     <div className=" bg-white min-h-screen">
       <section className="relative  overflow-hidden text-neutral layout">
-        <Link
-          className=" font-Fjalla normal-case text-3xl text-primary hover:text-primary-focus  absolute top-8 left-15 md:top-12"
-          href="/"
-        >
-          ISurvey.com
-        </Link>
         <div className="relative z-10 flex flex-wrap mt-8">
           <div className="w-full md:w-1/2 p-8 md:order-1 order-last">
             <div className="container px-4 mx-auto">
