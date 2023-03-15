@@ -33,10 +33,6 @@ function Stepper() {
       <div className="stepper-item w-8 h-8 text-center font-medium border-2 rounded-full flex items-center justify-center">
         3
       </div>
-      <div className=" diviseur  border w-4"></div>
-      <div className="stepper-item w-8 h-8 text-center font-medium border-2 rounded-full flex items-center justify-center">
-        4
-      </div>
     </div>
   );
 }

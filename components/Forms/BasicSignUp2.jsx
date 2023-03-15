@@ -39,7 +39,6 @@ function BasicSignUp2() {
       password: formData.password,
     });
   }
-
   return (
     <div className="w-2/3 flex items-center justify-center flex-col">
       <Formik
@@ -51,8 +50,8 @@ function BasicSignUp2() {
         validationSchema={SignUpSchema}
         onSubmit={(values) => {
           const data = { ...formData, ...values };
-          setFormData(data);
           setActiveStepIndex(activeStepIndex + 1);
+          setFormData(data);
           signUpWithEmail(data);
         }}
       >
@@ -75,7 +74,7 @@ function BasicSignUp2() {
             />
           </div>
           <ErrorMessage name="password" render={renderError} />
-          {/* <div className="flex flex-col items-center justify-center  w-full">
+          <div className="flex flex-col items-center justify-center  w-full">
             <ul className="flex flex-col items-stretch w-full my-6">
               <li className="flex items-center justify-between w-full">
                 <p className="text-sm">8 charactères minimum.</p>
@@ -107,7 +106,7 @@ function BasicSignUp2() {
             </ul>
 
             <h1 className=" h2 lg:text-5xl font-heading leading-tight"></h1>
-          </div> */}
+          </div>
           <div className="flex flex-col items-start mb-2">
             <label className="font-medium text-gray-900">
               Confirmez le mot de passe

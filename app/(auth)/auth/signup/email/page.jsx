@@ -12,7 +12,7 @@ function page() {
   const searchParams = useSearchParams();
   const email = searchParams.get("email");
 
-  console.log(email);
+  // console.log(email);
   function backtoAuth() {
     router.push("/auth/signup");
   }

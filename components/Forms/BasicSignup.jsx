@@ -21,7 +21,7 @@ function BasicSignup() {
   // Recuperer l'email dans les params
   const searchParams = useSearchParams();
   const email = searchParams.get("email");
-  console.log(searchParams.get("email"));
+  // console.log(searchParams.get("email"));
   const router = useRouter();
 
   return (

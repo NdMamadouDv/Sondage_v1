@@ -46,7 +46,7 @@ function FAQ() {
           value="item-3"
         >
           <AccordionTrigger>
-            Par quel moyen je peux partager mon sondage ?
+            Par quel moyen puis-je partager mon sondage ?
           </AccordionTrigger>
           <Accordion.Content className="AccordionContentText">
             En réalité toute personne détenant le lien de votre sondage peut y
