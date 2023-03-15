@@ -97,7 +97,8 @@ function BasicSignUp2() {
               </li>
               <li className="flex items-center justify-between w-full">
                 <p className="text-sm">
-                  Un symbole: <span className="">" * # . , ! ?"</span>.
+                  Un symbole: <span className="">&quot; * # . , ! ?&quot;</span>
+                  .
                 </p>
                 <span className="">
                   <BsCheck className="validPass" />

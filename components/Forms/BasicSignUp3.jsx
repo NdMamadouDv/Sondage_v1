@@ -21,7 +21,7 @@ function BasicSignUpStep3() {
     setActiveStepIndex(1);
 
     return () => {};
-  }, []);
+  }, [setActiveStepIndex]);
 
   const supabase = supabaseClient;
   const renderError = (message) => (
